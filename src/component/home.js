@@ -25,16 +25,8 @@ const HomePage = () => {
   const handleClose1 = () => setShow1(false);
   //const handleCreate = () => setShow(true);
 
-  console.log("execute", postList);
-
-  const test = ({ x = 100, y = 200 }) => {
-    console.log(x, y);
-  };
-
-  const sample = { x: 20, y: 30 };
   const getPostList = () => {
     axios.get("https://jsonplaceholder.typicode.com/posts").then((response) => {
-      //   console.log(response);
       setPostList(response.data);
       const xx = response.data.map((obj) => {
         return {
@@ -51,7 +43,6 @@ const HomePage = () => {
     axios
       .delete(`https://jsonplaceholder.typicode.com/posts/${id}`)
       .then((response) => {
-        // console.log(response);
         if (response.status === 200) {
           alert("Success");
         }
@@ -68,7 +59,6 @@ const HomePage = () => {
     axios
       .put(`https://jsonplaceholder.typicode.com/posts/${temp.id}`, temp)
       .then((response) => {
-        console.log(response);
         if (response.status === 200) {
           alert("success");
           setShow(false);
@@ -96,16 +86,12 @@ const HomePage = () => {
       });
   };
 
-  // const options = [
-  //   { value: "chocolate", label: "Chocolate" },
-  //   { value: "strawberry", label: "Strawberry" },
-  //   { value: "vanilla", label: "Vanilla" },
-  // ];
-
   return (
     <div>
+      <h1>GuardianLink Task</h1>
       <button
         type="button"
+        className="btn btn-primary"
         onClick={() => {
           setShow1(true);
         }}
@@ -131,6 +117,7 @@ const HomePage = () => {
                 <>
                   <button
                     type="button"
+                    className="btn btn-secondary"
                     onClick={() => {
                       updatePost(obj);
                     }}
@@ -156,7 +143,7 @@ const HomePage = () => {
       </table>
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
-          <Modal.Title>Edit Text</Modal.Title>
+          <Modal.Title className="txtalign">Edit Text</Modal.Title>
         </Modal.Header>
         <div>
           {temp && (
@@ -164,19 +151,24 @@ const HomePage = () => {
               <div>
                 <input
                   type="text"
+                  className="label"
                   value={temp.title}
                   onChange={(e) => {
                     setTemp({ ...temp, title: e.target.value });
                   }}
                 />
+                <br />
+                <br />
                 <input
                   type="text"
+                  className="label"
                   value={temp.body}
                   onChange={(e) => {
                     setTemp({ ...temp, body: e.target.value });
                   }}
                 />
                 <div>
+                  <br />
                   <button
                     type="button"
                     className="btn btn-primary label"
@@ -194,6 +186,7 @@ const HomePage = () => {
         <Modal show={show1} onHide={handleClose1}>
           <input
             type="text"
+            className="label"
             value={data.title}
             onChange={(e) => {
               setData({ ...data, title: e.target.value });
@@ -201,6 +194,7 @@ const HomePage = () => {
           />
           <input
             type="text "
+            className="label"
             value={data.body}
             onChange={(e) => {
               setData({ ...data, body: e.target.value });
