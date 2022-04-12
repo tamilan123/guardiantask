@@ -20,7 +20,7 @@ const HomePage = () => {
   }, []);
 
   const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
+  // const handleShow = () => setShow(true);
 
   const handleClose1 = () => setShow1(false);
   const handleCreate = () => setShow(true);
