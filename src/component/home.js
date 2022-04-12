@@ -23,7 +23,7 @@ const HomePage = () => {
   // const handleShow = () => setShow(true);
 
   const handleClose1 = () => setShow1(false);
-  const handleCreate = () => setShow(true);
+  //const handleCreate = () => setShow(true);
 
   console.log("execute", postList);
 
