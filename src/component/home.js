@@ -102,10 +102,18 @@ const HomePage = () => {
       <table className="table table-striped table-hover" border="1">
         <thead>
           <tr>
-            <th>Title</th>
-            <th>Body</th>
-            <th>Update</th>
-            <th>Delete</th>
+            <th>
+              <h4>Title</h4>
+            </th>
+            <th>
+              <h4>Body</h4>
+            </th>
+            <th>
+              <h4>Update</h4>
+            </th>
+            <th>
+              <h4>Delete</h4>
+            </th>
           </tr>
         </thead>
         <tbody>
